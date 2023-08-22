@@ -11,10 +11,12 @@ public class BudgetDiscountForQtdGreaterThanFive extends Discount{
     }
 
     @Override
-    public BigDecimal calculate(Budget budget) {
-        if (budget.getQtdProducts() > 5) {
-            return budget.getValue().multiply(new BigDecimal("0.1"));
-        }
-        return next.calculate(budget);
+    protected boolean isApply(Budget budget) {
+        return budget.getQtdProducts() > 5;
+    }
+
+    @Override
+    protected BigDecimal performCalculation(Budget budget) {
+        return budget.getValue().multiply(new BigDecimal("0.1"));
     }
 }
