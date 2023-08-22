@@ -17,6 +17,6 @@ public class BudgetDiscountForQtdGreaterThanFive extends Discount{
 
     @Override
     protected BigDecimal performCalculation(Budget budget) {
-        return budget.getValue().multiply(new BigDecimal("0.1"));
+        return budget.getAmount().multiply(new BigDecimal("0.1"));
     }
 }
