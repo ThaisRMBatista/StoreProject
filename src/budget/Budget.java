@@ -4,20 +4,35 @@ import java.math.BigDecimal;
 
 public class Budget {
 
-    private BigDecimal value;
+    private BigDecimal amount;
     private int qtdProducts;
+    private String situation;
 
-    public Budget(BigDecimal value) {
-        this.value = value;
+    public Budget(BigDecimal amount) {
+        this.amount = amount;
     }
 
-    public Budget(BigDecimal value, int qtdProducts) {
-        this.value = value;
+    public Budget(BigDecimal amount, int qtdProducts) {
+        this.amount = amount;
         this.qtdProducts = qtdProducts;
     }
 
-    public BigDecimal getValue() {
-        return value;
+    public void applyExtraDiscount() {
+        BigDecimal extraDiscountAmount = BigDecimal.ZERO;
+        if (situation.equals("UNDER ANALYSIS")) {
+            extraDiscountAmount = new BigDecimal("0.05");
+        } else if (situation.equals("APPROVED")) {
+            extraDiscountAmount = new BigDecimal("0.02");
+        }
+        this.amount = this.getAmount().subtract(extraDiscountAmount);
+    }
+
+    public void toApprove() {
+        this.situation = "APPROVED";
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
     }
 
     public int getQtdProducts() {

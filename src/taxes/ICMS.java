@@ -7,6 +7,6 @@ import java.math.BigDecimal;
 public class ICMS implements Taxes {
     @Override
     public BigDecimal calcular(Budget budget) {
-        return budget.getValue().multiply(new BigDecimal("0.1"));
+        return budget.getAmount().multiply(new BigDecimal("0.1"));
     }
 }
