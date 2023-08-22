@@ -1,6 +1,6 @@
-package taxes;
+package br.com.pattern.store.taxes;
 
-import budget.Budget;
+import br.com.pattern.store.budget.Budget;
 
 import java.math.BigDecimal;
 

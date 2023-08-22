@@ -1,7 +1,9 @@
-import taxes.TaxCalculator;
-import taxes.ICMS;
-import taxes.ISS;
-import budget.Budget;
+package br.com.pattern.store;
+
+import br.com.pattern.store.taxes.TaxCalculator;
+import br.com.pattern.store.taxes.ICMS;
+import br.com.pattern.store.taxes.ISS;
+import br.com.pattern.store.budget.Budget;
 
 import java.math.BigDecimal;
 

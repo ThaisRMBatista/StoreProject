@@ -1,5 +1,7 @@
-import budget.Budget;
-import discounts.DiscountCalculator;
+package br.com.pattern.store;
+
+import br.com.pattern.store.budget.Budget;
+import br.com.pattern.store.discounts.DiscountCalculator;
 
 import java.math.BigDecimal;
 

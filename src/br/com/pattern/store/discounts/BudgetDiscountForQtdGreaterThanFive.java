@@ -1,18 +1,18 @@
-package discounts;
+package br.com.pattern.store.discounts;
 
-import budget.Budget;
+import br.com.pattern.store.budget.Budget;
 
 import java.math.BigDecimal;
 
-public class BudgetDiscountForAmountsGreaterThanFiveHundred extends Discount{
+public class BudgetDiscountForQtdGreaterThanFive extends Discount{
 
-    public BudgetDiscountForAmountsGreaterThanFiveHundred(Discount next) {
+    public BudgetDiscountForQtdGreaterThanFive(Discount next) {
         super(next);
     }
 
     @Override
     protected boolean isApply(Budget budget) {
-        return budget.getAmount().compareTo(new BigDecimal("500")) > 0 ;
+        return budget.getQtdProducts() > 5;
     }
 
     @Override

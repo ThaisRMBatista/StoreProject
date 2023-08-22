@@ -1,6 +1,6 @@
-package discounts;
+package br.com.pattern.store.discounts;
 
-import budget.Budget;
+import br.com.pattern.store.budget.Budget;
 
 import java.math.BigDecimal;
 
