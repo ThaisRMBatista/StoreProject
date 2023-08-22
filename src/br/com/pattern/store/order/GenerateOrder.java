@@ -1,6 +1,8 @@
 package br.com.pattern.store.order;
 
 import br.com.pattern.store.budget.Budget;
+import br.com.pattern.store.order.action.SaveOrderDB;
+import br.com.pattern.store.order.action.SendEmailOrder;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -22,7 +24,10 @@ public class GenerateOrder {
 
         Order order = new Order(costumer, LocalDateTime.now(), budget);
 
-        System.out.println("Save order in dataBase");
-        System.out.println("Send email with data order");
+        SendEmailOrder sendEmailOrder = new SendEmailOrder();
+        SaveOrderDB saveOrderDB = new SaveOrderDB();
+
+        sendEmailOrder.execute(order);
+        saveOrderDB.execute(order);
     }
 }
