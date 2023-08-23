@@ -1,11 +1,6 @@
 package br.com.pattern.store.order;
 
-import br.com.pattern.store.budget.Budget;
-import br.com.pattern.store.order.action.SaveOrderDB;
-import br.com.pattern.store.order.action.SendEmailOrder;
-
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 public class GenerateOrder {
 
@@ -19,15 +14,15 @@ public class GenerateOrder {
         this.qtdProducts = qtdProducts;
     }
 
-    public void execute() {
-        Budget budget = new Budget(this.budgetAmount, this.qtdProducts);
+    public String getCostumer() {
+        return costumer;
+    }
 
-        Order order = new Order(costumer, LocalDateTime.now(), budget);
+    public BigDecimal getBudgetAmount() {
+        return budgetAmount;
+    }
 
-        SendEmailOrder sendEmailOrder = new SendEmailOrder();
-        SaveOrderDB saveOrderDB = new SaveOrderDB();
-
-        sendEmailOrder.execute(order);
-        saveOrderDB.execute(order);
+    public int getQtdProducts() {
+        return qtdProducts;
     }
 }
