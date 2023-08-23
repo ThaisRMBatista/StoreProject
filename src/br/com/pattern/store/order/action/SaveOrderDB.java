@@ -2,9 +2,10 @@ package br.com.pattern.store.order.action;
 
 import br.com.pattern.store.order.Order;
 
-public class SaveOrderDB {
+public class SaveOrderDB implements ActionAfterNewOrder{
 
-    public void execute(Order order) {
+    @Override
+    public void executeAction(Order order) {
         System.out.println("Save order in dataBase");
     }
 }

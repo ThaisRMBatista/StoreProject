@@ -2,9 +2,10 @@ package br.com.pattern.store.order.action;
 
 import br.com.pattern.store.order.Order;
 
-public class SendEmailOrder {
+public class SendEmailOrder implements ActionAfterNewOrder{
 
-    public void execute(Order order) {
+    @Override
+    public void executeAction(Order order) {
         System.out.println("Send email with data order");
     }
 }
